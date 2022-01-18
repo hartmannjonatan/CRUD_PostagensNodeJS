@@ -1,4 +1,4 @@
-#CRUD de Postagens e Categorias com NodeJS e Express
+# CRUD de Postagens e Categorias com NodeJS e Express
 
 Esse projeto de estudo consiste em um CRUD (Create, Read, Update e Delete) de Postagens e Catgeorias, relacionando-as no banco de dados. Dessa forma é possível ver postagens de determinada categoria por exemplo.
 
