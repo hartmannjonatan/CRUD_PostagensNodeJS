@@ -1,0 +1,31 @@
+{{#each postagem}}
+<h2>{{titulo}}</h2>
+<small>{{date}}</small>
+<div class="d-flex my-2">
+    <img class="mx-2 my-1" src="https://image.flaticon.com/icons/png/512/40/40022.png" alt="Etiqueta" width="20" height="20">
+    <h5>{{categoria.nome}}</h5>
+    <small class="mx-4">Slug: {{slug}}</small>
+</div>
+
+
+<div class="card mt-4">
+    <div class="card-body">
+        <p>{{conteudo}}</p>
+    </div>
+    {{#if img_url}}
+        <div class="card-footer">
+            <img src="https://pt.all7soft.com/images/upload/4/9/free-pascal-windows-7-screenshot.jpg" alt="{{img_url}}" class="img-fluid">
+        </div>
+    {{/if}}
+</div>
+{{else}}
+    <div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Error 404!</h4>
+    <p>Esta postagem não existe! :(</p>
+    <hr>
+    <p class="mb-0">Peça para o administrador do site escrever algo sobre isso! :)</p>
+    </div>
+
+{{/each}}
+
+<a href="/admin/postagens"><button class="btn btn-dark my-3">Voltar</button></a>

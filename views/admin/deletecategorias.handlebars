@@ -1,0 +1,18 @@
+<h2>Deletar {{categoria.nome}}</h2>
+<hr>
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>{{categoria.nome}}</h4>
+            <small>Slug: {{categoria.slug}}</small><br>
+            <small>Data de criação: {{categoria.date}}</small><br>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <form action="/admin/categorias/delete" method="post">
+                <input type="hidden" name="id" value="{{categoria.id}}">
+                <button type="submit" class="btn btn-danger">Quero excluir a categoria {{categoria.nome}}</button>
+            </form>
+        </div>
+    </div>

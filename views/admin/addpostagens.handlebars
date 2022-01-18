@@ -1,0 +1,34 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+<h3>Nova postagem:</h3>
+
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/postagens/nova" method="post">
+            <label for="nome">Título: </label>
+            <input type="text" name="titulo" id="titulo" placeholder="Título da postagem" class="form-control">
+            <label for="slug">Slug: </label>
+            <input type="text" name="slug" id="slug" placeholder="Slug da postagem" class="form-control">
+            <label for="descricao">Descrição: </label>
+            <textarea class="form-control" name="descricao" id="descricao" cols="30" rows="10" placeholder="Digite uma breve descrição de sua postagem..."></textarea>
+            <label for="conteudo">Conteúdo: </label>
+            <textarea class="form-control" name="conteudo" id="conteudo" cols="30" rows="10" placeholder="Digite aqui..."></textarea>
+            <label for="categoria">Categoria: </label>
+            <select class="form-select" aria-label="Default select example" name="categoria" id="categoria">
+                <option selected disabled>Escolha uma categoria</option>
+                {{#each categorias}}
+                <option value="{{id}}">{{nome}}</option>
+                {{/each}}
+            </select>
+            <hr class="mt-3">
+            <h4>Adicione uma imagem no seu post (opcional): </h4>
+            <label for="img">URL da imagem: </label>
+            <input type="url" name="img" id="img" placeholder="Cole aqui o url da sua imagem..." class="form-control">
+            <br>
+            <button type="submit" class="btn btn-success">Postar</button>
+        </form>
+    </div>
+</div>
